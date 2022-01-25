@@ -5,6 +5,15 @@ import { BrowserRouter } from 'react-router-dom';
 import './styles/App.css';
 import App from './components/App';
 
+var request = new XMLHttpRequest();
+request.open('GET', url);
+request.responseType = 'text';
+
+request.onload = function () {
+    poemDisplay.textContent = request.response;
+};
+
+request.send();
 
 ReactDOM.render(
     <React.StrictMode>
