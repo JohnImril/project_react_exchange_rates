@@ -1,6 +1,4 @@
-import { Component } from "react";
+/// <reference types="react" />
 import '../styles/App.css';
-declare class App extends Component {
-    render(): JSX.Element;
-}
+declare function App(): JSX.Element;
 export default App;

@@ -12,7 +12,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
   },
   devServer: {
-    //contentBase: 'dist',
+    //contentBase: path.resolve(__dirname, 'dist'),
     compress: true,
     port: 3000,
   },

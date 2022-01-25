@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "dev": "webpack --mode development && node ./dist/components/index_bundle.js",
-    "build:prod": "webpack --config webpack.config.prod.js"
+    "build": "webpack --mode=production"
   },
   "author": "",
   "license": "ISC",
