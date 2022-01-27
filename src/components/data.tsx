@@ -1,28 +1,40 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import RateItem from './';
 //import img from '../images/icon-glass-search.png';
+type TExchange = { name: string; count: number }
+type TResponseExchange = { quotes: { [K: string]: number } };
 
-const exchangeRates = () => {
 
-    const [exchangeRates, setExchangeRates] = useState([])
-    const getExchangeRates = () => {
-        axios.get('http://api.currencylayer.com/live?access_key=9ae101ac288f5d7ff8708572065e06eb')
+const ExchangeRates: React.FC = () => {
+
+    const [exchangeRatesData, setExchangeRates] = useState<TExchange[]>([])
+    const [selectedItem, setSelectedItem] = useState<TExchange>()
+
+    const loadExchangeRates = () => {
+        axios.get<TResponseExchange>('http://api.currencylayer.com/live?access_key=9ae101ac288f5d7ff8708572065e06eb')
             .then((response) => {
-                setExchangeRates(response.data)
+                if (response.data.quotes) {
+                    console.log(Object.entries(response.data.quotes))
+
+                    setExchangeRates(Object.entries(response.data.quotes).map(elem => ({ name: elem[0].slice(3), count: elem[1] })))
+                }
+
             })
     }
     useEffect(() => {
-        getExchangeRates()
+        loadExchangeRates()
     }, [])
 
     const [value, setValue] = useState('')
 
-    const filteredRates = exchangeRates.filter(quotes => {
+    const filteredRates = exchangeRatesData.filter(quotes => {
         return quotes.name.toLowerCase().includes(value.toLowerCase())
     })
 
+    const clickHandler = (name: string, count: number) => {
+        setSelectedItem({ name, count });
+    }
     return (
         <div>
             <div className='form'>
@@ -33,20 +45,37 @@ const exchangeRates = () => {
                         className='search__input'
                         onChange={(event) => setValue(event.target.value)}
                     />
-                    <img src={img} alt='img' className='search_img' />
+                    {/* <img src={'img'} alt='img' className='search_img' /> */}
                 </form>
             </div>
             <div className='rates'>
-                {
-                    filteredRates.map((quotes, index) => {
-                        return (
-                            <RateItem quotes={quotes} key={index} />
+                <div className='select'>
+                    {
+                        filteredRates.map(({ name, count }, index) => (<ul>
+                            <li className='selectRate' key={index} onClick={() => clickHandler({ name, count })}>
+                                <span >{name}</span>
+                            </li>
+                        </ul>)
                         )
-                    })
-                }
+                    }
+                </div>
+                <div className='detail'>
+                    {selectedItem?.name}
+                    {selectedItem?.count}
+                </div>
             </div>
+            {/* <div id="text">
+
+                {filteredRates.map(({ name, count }) => (<p>
+
+                    <span>{name}: </span>
+                    <span>{count}</span>
+                </p>))
+                }
+            </div> */}
+
         </div>
     )
 }
 
-export default exchangeRates
+export default ExchangeRates
