@@ -2,7 +2,7 @@
 const Homepage = () => {
     return (
         <div>
-            Main page
+            {/* Main page */}
         </div>
     )
 }
