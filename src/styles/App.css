@@ -24,7 +24,8 @@
     font-size: calc(10px + 2vmin);
     color: white;
     display: flex;
-    flex-direction: row;
+   
+    
   }
   
   
@@ -35,8 +36,24 @@
  
 
   .header {
+    position: absolute;
     display: flex;
     flex-direction: row;
+    
+    text-decoration: none;
+    letter-spacing: 1%;
+  }
+
+  .form{
+  justify-content: center;
+  padding-top: 5px;
+   
+  
+  } 
+  .search__input {
+    background: #FFFDFD;
+    border-radius: 10px;
+    
   }
 
   .select {
@@ -47,4 +64,12 @@
 
   .selectRate {
     list-style-type: none;
+  }
+
+  .detail {
+  width: 959px;
+  height: 825px;
+  left: 795px;
+  top: 450px;
+  position: fixed;
   }

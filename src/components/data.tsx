@@ -32,7 +32,7 @@ const ExchangeRates: React.FC = () => {
         return quotes.name.toLowerCase().includes(value.toLowerCase())
     })
 
-    const clickHandler = (name: string, count: number) => {
+    const clickHandler = ({ name, count }: TExchange) => {
         setSelectedItem({ name, count });
     }
     return (
@@ -64,16 +64,6 @@ const ExchangeRates: React.FC = () => {
                     {selectedItem?.count}
                 </div>
             </div>
-            {/* <div id="text">
-
-                {filteredRates.map(({ name, count }) => (<p>
-
-                    <span>{name}: </span>
-                    <span>{count}</span>
-                </p>))
-                }
-            </div> */}
-
         </div>
     )
 }
