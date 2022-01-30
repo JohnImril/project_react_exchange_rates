@@ -22,6 +22,10 @@ function App() {
             </Routes>
 
             <ExchangeRates />
+
+            <div className='scroll-up'>
+
+            </div>
         </div>
     );
 }

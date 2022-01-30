@@ -60,10 +60,12 @@
     position: absolute;
     float: left;
     padding-left: 100px;
+    
   }
 
   .selectRate {
     list-style-type: none;
+    cursor: pointer;
   }
 
   .detail {
@@ -72,4 +74,12 @@
   left: 795px;
   top: 450px;
   position: fixed;
+  }
+
+  .scroll-up{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 1000;
+    cursor: pointer;
   }
