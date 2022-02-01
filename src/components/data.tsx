@@ -38,7 +38,7 @@ const ExchangeRates: React.FC = () => {
     return (
         <div>
             <div className='form'>
-                <form className='search__form'>
+                <form className='search-form'>
                     <input
                         type='text'
                         placeholder='search'
@@ -48,21 +48,19 @@ const ExchangeRates: React.FC = () => {
                     {/* <img src={'img'} alt='img' className='search_img' /> */}
                 </form>
             </div>
-            <div className='rates'>
-                <div className='select'>
+            <div className='select'>
+                <ul>
                     {
-                        filteredRates.map(({ name, count }, index) => (<ul>
-                            <li className='selectRate' key={index} onClick={() => clickHandler({ name, count })}>
-                                <span >{name}</span>
-                            </li>
-                        </ul>)
+                        filteredRates.map(({ name, count }, index) => (<li>
+                            <span className='select-rate' key={index} onClick={() => clickHandler({ name, count })}>{name}</span>
+                        </li>)
                         )
                     }
-                </div>
-                <div className='detail'>
-                    {selectedItem?.name}
-                    {selectedItem?.count}
-                </div>
+                </ul>
+            </div>
+            <div className='detail'>
+                {selectedItem?.name}
+                {selectedItem?.count}
             </div>
         </div>
     )

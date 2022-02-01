@@ -7,8 +7,8 @@ import ExchangeRates from './data';
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
+        <div className="app">
+            <header className="app-header">
                 <div className='header'>
                     <a href="/">Home</a>
                     {/* <a href="/rates">Rates</a> */}
