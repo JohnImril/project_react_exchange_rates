@@ -36,6 +36,7 @@ const ExchangeRates: React.FC = () => {
         setSelectedItem({ name, count });
     }
     return (
+
         <div>
             <div className='form'>
                 <form className='search-form'>

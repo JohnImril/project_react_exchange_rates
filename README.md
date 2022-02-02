@@ -3,7 +3,7 @@
 
 Список обязательных правок: 
 
-1) добавть кнопку перемещения из конца списка
+
 
 3) не использовать position: fixed в блоке вывода значений, это не позволит масштабировать окно браузера
 4) добавить нормальные стили  по типу: https://www.figma.com/file/rSQry6PrQHJWUJ0g01Dn6p/Untitled?node-id=0%3A1
@@ -24,3 +24,13 @@
 
 
 <!-- npm install --save @types/react-dom -->
+
+<!-- для роутера
+import { Routes, Route, Link } from 'react-router-dom';
+import { Homepage } from '../Pages/Homepage';
+import { Ratepage } from '../Pages/Ratepage';
+
+<Routes>
+    <Route path="/" element={<Homepage />} />
+</Routes>
+ -->
