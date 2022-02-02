@@ -51,8 +51,8 @@ const ExchangeRates: React.FC = () => {
             <div className='select'>
                 <ul>
                     {
-                        filteredRates.map(({ name, count }, index) => (<li>
-                            <span className='select-rate' key={index} onClick={() => clickHandler({ name, count })}>{name}</span>
+                        filteredRates.map(({ name, count }, index) => (<li className='select-rate' key={index} onClick={() => clickHandler({ name, count })}>
+                            <span >{name}</span>
                         </li>)
                         )
                     }
