@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-//import img from '../images/icon-glass-search.png';
 type TExchange = { name: string; count: number }
 type TResponseExchange = { quotes: { [K: string]: number } };
 
@@ -42,15 +41,16 @@ const ExchangeRates: React.FC = () => {
                 <form className='search-form'>
                     <input
                         type='text'
-                        placeholder='search'
+                        placeholder="Search here..."
                         className='search__input'
                         onChange={(event) => setValue(event.target.value)}
+                        required
                     />
-                    {/* <img src={'img'} alt='img' className='search_img' /> */}
+                    {/* <button className='search-button' type="submit">Search</button> */}
                 </form>
             </div>
             <div className='select'>
-                <ul>
+                <ul className='select-list'>
                     {
                         filteredRates.map(({ name, count }, index) => (<li className='select-rate' key={index} onClick={() => clickHandler({ name, count })}>
                             <span >{name}</span>

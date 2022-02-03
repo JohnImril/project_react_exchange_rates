@@ -34,3 +34,54 @@ import { Ratepage } from '../Pages/Ratepage';
     <Route path="/" element={<Homepage />} />
 </Routes>
  -->
+
+
+
+// const Homepage = (data) => {
+//     if (!data.lenth) return null
+//     const list = data.map(item => {
+//         const { name, value } = item;
+//         return <li>
+//             <span>{name} :</span>
+//             <span>{value}</span>
+//         </li>
+//     })
+//     return (
+//         <ul>
+//             {list}
+
+//         </ul>
+//     )
+// }
+
+
+
+
+
+// fetch(
+//     'http://api.currencylayer.com/live?access_key=9ae101ac288f5d7ff8708572065e06eb'
+// ).then((res) => res.json())
+//     .then((data) => setRate(data));
+
+// function setRate({ success, terms, privacy, timestamp, source, quotes }) {
+//     document.body.insertAdjacentHTML(
+//         'afterbegin',
+//         `
+//         <h1>${success}</h1>
+//         <h2>${terms}</h2>
+//         <h3>${privacy}</h3>
+//         <h4>${timestamp}</h4>
+//         <h5>${source}</h5>
+//         <h6>${quotes}</h6>
+//         `
+//     );
+// }
+
+
+
+
+// import React from "react";
+// import ReactDOM from "react-dom";
+// import App from "./components/App";
+
+// ReactDOM.render(<App />, document.getElementById("root"))
