@@ -8,7 +8,7 @@ function App() {
         <div className="app">
             <header className="app-header">
                 <div className='header'>
-                    <a className='logo' href="/">Home</a>
+                    <a className='logo' href="/">Exchange Rates</a>
                 </div>
             </header>
 
