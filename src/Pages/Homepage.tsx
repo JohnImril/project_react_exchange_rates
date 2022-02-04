@@ -1,12 +1,5 @@
-
 const Homepage = () => {
-    return (
-        <div>
-            {/* Main page */}
-        </div>
-    )
-}
+    return <div></div>;
+};
 
 export { Homepage };
-
-
