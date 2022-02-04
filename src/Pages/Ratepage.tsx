@@ -1,9 +1,5 @@
 const Ratepage = () => {
-    return (
-        <div>
-
-        </div>
-    )
-}
+    return <div></div>;
+};
 
 export { Ratepage };

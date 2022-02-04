@@ -1,12 +1,10 @@
 {
-    "extends": [
-      "plugin:prettier/recommended"
-    ],
-  
+    "extends": ["plugin:prettier/recommended"],
+
     "plugins": ["prettier"],
-  
+
     "rules": {
-      "prettier/prettier": "error"
+        "prettier/prettier": "error"
     },
     "useEslintrc": false,
     "parserOptions": {
@@ -15,5 +13,4 @@
     "env": {
         "es6": true
     }
-    
-  }
+}

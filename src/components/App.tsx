@@ -1,14 +1,15 @@
-
 import '../styles/App.css';
 import ExchangeRates from './data';
-import ScrollTopArrow from './ScrollTopArrow'
+import ScrollTopArrow from './ScrollTopArrow';
 
 function App() {
     return (
         <div className="app">
             <header className="app-header">
-                <div className='header'>
-                    <a className='logo' href="/">Exchange Rates</a>
+                <div className="header">
+                    <a className="logo" href="/">
+                        Exchange Rates
+                    </a>
                 </div>
             </header>
 
@@ -18,6 +19,5 @@ function App() {
         </div>
     );
 }
-
 
 export default App;
