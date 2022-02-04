@@ -138,10 +138,16 @@ table {
   height: 60px;
   display: flex;
   justify-content: flex-start;
+  
 }
 .logo {
+
+
   text-decoration: none;
   letter-spacing: 1%;
+  font-size: 3rem;
+  font-weight: 700;
+  
 }
 
 .form {
@@ -181,33 +187,6 @@ table {
   background: transparent;
 }
 
-/* .search-button {
-  position: relative;
-  float: right;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  height: 40px;
-  width: 120px;
-  color: #fff;
-  background: transparent;
-  border-left: 1px solid #fff;
-  border-radius: 0 3px 3px 0;
-}
-
-.search-button:hover {
-  background: #fff;
-  color:#444;
-}
-
-.search-button:active {
-  box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
-}
-
-.search-button:focus {
-  outline: 0;
-} */
-
 .select {
   position: absolute;
   left: 0;
@@ -222,7 +201,7 @@ table {
 }
 
 .select-rate {
-  font-family: 'Trebuchet MS', 'Lucida Sans';
+ 
   padding: 7px 20px;
   width: 50px;
   margin: 10px 10px 10px 10px;
@@ -232,37 +211,52 @@ table {
   box-shadow: 2px -2px 5px 0 rgba(0, 0, 0, 0.1),
     -2px -2px 5px 0 rgba(0, 0, 0, 0.1), 2px 2px 5px 0 rgba(0, 0, 0, 0.1),
     -2px 2px 5px 0 rgba(0, 0, 0, 0.1);
-  font-size: 20px;
+ 
   letter-spacing: 2px;
   transition: 0.3s all linear;
   float: left;
+  cursor: pointer;
 }
 .select-rate:nth-child(3n + 1) {
   clear: both;
   border-color: #8a7dff;
 }
-/* .select-rate{border-color: #8a7dff;} */
-/* .select-rate:nth-child(3){border-color: #fcba30;}
-.select-rate:nth-child(4){border-color: #1ccfc9;}
-.select-rate:nth-child(5){border-color: #493224;} */
+
 .select-rate:hover {
   border-left: 10px solid transparent;
 }
 .select-rate:hover {
-  border-right: 10px solid #8a7dff;
+  border-right: 10px solid #FF0000;
 }
-/* .select-rate:nth-child(1):hover {border-right: 10px solid #f05d22;}
-.select-rate:nth-child(2):hover {border-right: 10px solid #8bc63e;}
-.select-rate:nth-child(3):hover {border-right: 10px solid #fcba30;}
-.select-rate:nth-child(4):hover {border-right: 10px solid #1ccfc9;}
-.select-rate:nth-child(5):hover {border-right: 10px solid #493224;} */
+
+.select-rate-button{
+  font-family: 'Trebuchet MS', 'Lucida Sans'; 
+  font-size: 20px;  
+  border: none; 
+  border-radius: 5px;
+  background-color: rgba(222, 184, 135, 0); color: black;
+  cursor: pointer;
+}
 
 .detail {
-  width: 959px;
-  height: 825px;
-  left: 795px;
-  top: 450px;
+
+  background: #ffffff;
+
+  position: relative;
+  float: left;
+
   position: fixed;
+  border-radius: 10px;
+  top: 20rem;
+}
+
+.detail-scroll{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  min-width: 150px; 
+  padding: 40px;
+ 
 }
 
 .styles_scroll-to-top {
