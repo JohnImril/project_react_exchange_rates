@@ -16,11 +16,7 @@ const ExchangeRates: React.FC = () => {
             .then((response) => {
                 if (response.data.quotes) {
                     console.log(Object.entries(response.data.quotes));
-                    if (response.data) {
-                        setMarker(true);
-                    } else {
-                        setMarker(false);
-                    }
+                    setMarker(!!response.data);
 
                     setExchangeRates(
                         Object.entries(response.data.quotes).map((elem) => ({
@@ -37,10 +33,7 @@ const ExchangeRates: React.FC = () => {
 
     const [value, setValue] = useState('');
 
-    const filteredRates = exchangeRatesData.filter((quotes) => {
-        if (!value.length) return Array;
-        else return quotes.name.toLowerCase().includes(value.toLowerCase());
-    });
+    const filteredRates = React.useMemo(()=> value ? exchangeRatesData.filter((quotes) => quotes.name.toLowerCase().includes(value.toLowerCase()) ) : exchangeRatesData, [exchangeRatesData, value] );
 
     const clickHandler = ({ name, count }: TExchange) => {
         setSelectedItem({ name, count });
@@ -48,7 +41,7 @@ const ExchangeRates: React.FC = () => {
     return (
         <div>
             <div className="form">
-                <form className="search-form">
+                <div className="search-form">
                     <input
                         type="text"
                         placeholder="Search here..."
@@ -56,7 +49,7 @@ const ExchangeRates: React.FC = () => {
                         onChange={(event) => setValue(event.target.value)}
                         required
                     />
-                </form>
+                </div> 
             </div>
             <div className="select">
                 <ul className="select-list">

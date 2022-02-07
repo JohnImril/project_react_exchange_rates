@@ -1,5 +1,5 @@
 import '../styles/App.css';
-import ExchangeRates from './data';
+import ExchangeRatesData from './data';
 import ScrollTopArrow from './ScrollTopArrow';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
                 </div>
             </header>
 
-            <ExchangeRates />
+            <ExchangeRatesData />
 
             <ScrollTopArrow />
         </div>

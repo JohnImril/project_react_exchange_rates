@@ -6,7 +6,7 @@
     "rules": {
         "prettier/prettier": "error"
     },
-    "useEslintrc": false,
+    "useEslintrc": true,
     "parserOptions": {
         "ecmaVersion": 2017
     },
