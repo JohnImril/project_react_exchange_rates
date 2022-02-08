@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Api } from './Api';
+import   Detail  from './Detail';
 type TExchange = { name: string; count: number };
-type TResponseExchange = { quotes: { [K: string]: number } };
+
 
 const ExchangeRates: React.FC = () => {
     const [exchangeRatesData, setExchangeRates] = useState<TExchange[]>([]);
@@ -9,23 +10,20 @@ const ExchangeRates: React.FC = () => {
     const [marker, setMarker] = useState(false);
 
     const loadExchangeRates = () => {
-        axios
-            .get<TResponseExchange>(
-                'http://api.currencylayer.com/live?access_key=9ae101ac288f5d7ff8708572065e06eb'
-            )
-            .then((response) => {
-                if (response.data.quotes) {
-                    console.log(Object.entries(response.data.quotes));
-                    setMarker(!!response.data);
+        Api.get().then((response) => {
+            if (response.quotes) {
 
-                    setExchangeRates(
-                        Object.entries(response.data.quotes).map((elem) => ({
-                            name: elem[0].slice(3),
-                            count: elem[1],
-                        }))
-                    );
-                }
-            });
+                console.log(Object.entries(response.quotes));
+                setMarker(!!response.quotes);
+
+                setExchangeRates(
+                    Object.entries(response.quotes).map((elem) => ({
+                        name: elem[0].slice(3),
+                        count: elem[1],
+                    }))
+                );
+            }
+        });
     };
     useEffect(() => {
         loadExchangeRates();
@@ -33,7 +31,7 @@ const ExchangeRates: React.FC = () => {
 
     const [value, setValue] = useState('');
 
-    const filteredRates = React.useMemo(()=> value ? exchangeRatesData.filter((quotes) => quotes.name.toLowerCase().includes(value.toLowerCase()) ) : exchangeRatesData, [exchangeRatesData, value] );
+    const filteredRates = React.useMemo(() => value ? exchangeRatesData.filter((quotes) => quotes.name.toLowerCase().includes(value.toLowerCase())) : exchangeRatesData, [exchangeRatesData, value]);
 
     const clickHandler = ({ name, count }: TExchange) => {
         setSelectedItem({ name, count });
@@ -49,7 +47,7 @@ const ExchangeRates: React.FC = () => {
                         onChange={(event) => setValue(event.target.value)}
                         required
                     />
-                </div> 
+                </div>
             </div>
             <div className="select">
                 <ul className="select-list">
@@ -66,14 +64,7 @@ const ExchangeRates: React.FC = () => {
                     ))}
                 </ul>
             </div>
-            {marker && (
-                <div className="detail">
-                    <div className="detail-scroll">
-                        1$=
-                        {selectedItem?.count} {selectedItem?.name}
-                    </div>
-                </div>
-            )}
+            {selectedItem && <Detail selectedItem={selectedItem} />}
         </div>
     );
 };
