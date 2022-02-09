@@ -61,5 +61,5 @@
         "jsx": "react-jsx",
         "baseUrl": "."
     },
-    "files": ["./src/index.tsx"]
+    "files": ["./src/App.tsx"]
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Api } from "./Api";
-import Detail from "./Detail";
+import { Detail } from "./Detail";
+import { List } from "./List";
 type TExchange = { name: string; count: number };
 
 const ExchangeRates: React.FC = () => {
@@ -11,7 +12,7 @@ const ExchangeRates: React.FC = () => {
 	const loadExchangeRates = () => {
 		Api.get().then((response) => {
 			if (response.quotes) {
-				// console.log(Object.entries(response.quotes));
+				console.log(Object.entries(response.quotes));
 				setMarker(!!response.quotes);
 
 				setExchangeRates(
@@ -40,6 +41,7 @@ const ExchangeRates: React.FC = () => {
 	const clickHandler = ({ name, count }: TExchange) => {
 		setSelectedItem({ name, count });
 	};
+
 	return (
 		<div>
 			<div className="form">
@@ -53,16 +55,8 @@ const ExchangeRates: React.FC = () => {
 					/>
 				</div>
 			</div>
-			<div className="select">
-				<ul className="select-list">
-					{filteredRates.map(({ name, count }, index) => (
-						<li className="select-rate" key={index} onClick={() => clickHandler({ name, count })}>
-							<button className="select-rate-button">{name}</button>
-						</li>
-					))}
-				</ul>
-			</div>
-			{selectedItem && <Detail selectedItem={selectedItem} />}
+			<List items={filteredRates} onClick={clickHandler}>
+			{selectedItem && <Detail name={selectedItem.name} count={selectedItem.count} />}
 		</div>
 	);
 };
