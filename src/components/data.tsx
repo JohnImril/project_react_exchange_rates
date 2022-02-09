@@ -55,7 +55,7 @@ const ExchangeRates: React.FC = () => {
 					/>
 				</div>
 			</div>
-			<List items={filteredRates} onClick={clickHandler}>
+			<List items={filteredRates} onClick={clickHandler} />
 			{selectedItem && <Detail name={selectedItem.name} count={selectedItem.count} />}
 		</div>
 	);
