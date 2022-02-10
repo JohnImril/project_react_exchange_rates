@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Api } from "./Api";
 import { Detail } from "./Detail";
 import { List } from "./List";
+import { Link } from "react-router-dom";
+
 type TExchange = { name: string; count: number };
 
 const ExchangeRatesData: React.FC = () => {
@@ -44,17 +46,24 @@ const ExchangeRatesData: React.FC = () => {
 
 	return (
 		<div>
-			<div className="form">
-				<div className="search-form">
-					<input
-						type="text"
-						placeholder="Search here..."
-						className="search__input"
-						onChange={(event) => setValue(event.target.value)}
-						required
-					/>
+			<header className="app-header">
+				<div className="header">
+					<Link className="logo" to="/">
+						Exchange Rates
+					</Link>
 				</div>
-			</div>
+				<div className="form">
+					<div className="search-form">
+						<input
+							type="text"
+							placeholder="Search here..."
+							className="search__input"
+							onChange={(event) => setValue(event.target.value)}
+							required
+						/>
+					</div>
+				</div>
+			</header>
 			<List filteredRates={filteredRates} clickHandler={clickHandler} />
 			{selectedItem && <Detail name={selectedItem.name} count={selectedItem.count} />}
 		</div>

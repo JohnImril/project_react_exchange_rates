@@ -124,11 +124,6 @@ table {
 	border-spacing: 0;
 }
 
-.app {
-	flex-shrink: 0;
-	display: flex;
-}
-
 .app-header {
 	font-size: 34px;
 	font-weight: 600;
