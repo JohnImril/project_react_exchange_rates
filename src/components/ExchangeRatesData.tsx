@@ -4,7 +4,7 @@ import { Detail } from "./Detail";
 import { List } from "./List";
 type TExchange = { name: string; count: number };
 
-const ExchangeRates: React.FC = () => {
+const ExchangeRatesData: React.FC = () => {
 	const [exchangeRatesData, setExchangeRates] = useState<TExchange[]>([]);
 	const [selectedItem, setSelectedItem] = useState<TExchange>();
 	const [marker, setMarker] = useState(false);
@@ -55,10 +55,10 @@ const ExchangeRates: React.FC = () => {
 					/>
 				</div>
 			</div>
-			<List items={filteredRates} onClick={clickHandler} />
+			<List filteredRates={filteredRates} clickHandler={clickHandler} />
 			{selectedItem && <Detail name={selectedItem.name} count={selectedItem.count} />}
 		</div>
 	);
 };
 
-export default ExchangeRates;
+export default ExchangeRatesData;

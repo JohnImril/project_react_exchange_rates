@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/App.css";
-import ExchangeRatesData from "../components/data";
+import ExchangeRatesData from "../components/ExchangeRatesData";
 import ScrollTopArrow from "../components/ScrollTopArrow";
 import { Link } from "react-router-dom";
 

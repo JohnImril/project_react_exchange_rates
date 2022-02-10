@@ -9,7 +9,6 @@ export const List = (props: { filteredRates: TExchange[]; clickHandler: ({ name,
 						<button className="select-rate-button">{name}</button>
 					</li>
 				))}
-				{console.log(props.clickHandler)}
 			</ul>
 		</div>
 	);
