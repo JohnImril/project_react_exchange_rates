@@ -2,7 +2,7 @@
     "name": "project_react_exchange_rates",
     "version": "1.0.0",
     "description": "",
-    "main": "index.tsx",
+    "main": "App.tsx",
     "scripts": {
         "start": "webpack-dev-server --mode development --open --hot",
         "dev": "webpack --mode development && node ./dist/components/index_bundle.js",

@@ -79,12 +79,12 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -98,186 +98,184 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+	display: block;
 }
 body {
-    line-height: 1;
-    background-color: rgb(255, 255, 255);
+	line-height: 1;
+	background-color: rgb(255, 255, 255);
 }
 ol,
 ul {
-    list-style: none;
+	list-style: none;
 }
 blockquote,
 q {
-    quotes: none;
+	quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+	content: "";
+	content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .app {
-    flex-shrink: 0;
-    display: flex;
+	flex-shrink: 0;
+	display: flex;
 }
 
 .app-header {
-    font-size: 34px;
-    font-weight: 600;
-    line-height: 50px;
-    background-color: #8a7dff;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: flex-start;
+	font-size: 34px;
+	font-weight: 600;
+	line-height: 50px;
+	background-color: #8a7dff;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: flex-start;
 }
 .logo {
-    text-decoration: none;
-    letter-spacing: 1%;
-    font-size: 3rem;
-    font-weight: 700;
-    font-family: 'Trebuchet MS', 'Lucida Sans';
+	text-decoration: none;
+	letter-spacing: 1%;
+	font-size: 3rem;
+	font-weight: 700;
+	font-family: "Trebuchet MS", "Lucida Sans";
 }
 
 .form {
-    display: flex;
-    align-items: center;
-    background-color: #8a7dff;
-    height: 60px;
-    padding-right: 100px;
+	display: flex;
+	align-items: center;
+	background-color: #8a7dff;
+	height: 60px;
+	padding-right: 100px;
 }
 
 .search-form {
-    width: 500px;
-    height: 40px;
-    margin: 150px auto;
-    background: #444;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    border: 1px solid #fff;
+	width: 500px;
+	height: 40px;
+	margin: 150px auto;
+	background: #444;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	border: 1px solid #fff;
 }
 
 .search__input {
-    width: 370px;
-    padding: 10px 5px;
-    float: left;
-    color: rgb(255, 255, 255);
-    border: 0;
-    background: transparent;
-    border-radius: 3px 0 0 3px;
+	width: 370px;
+	padding: 10px 5px;
+	float: left;
+	color: rgb(255, 255, 255);
+	border: 0;
+	background: transparent;
+	border-radius: 3px 0 0 3px;
 }
 
 .search__input::-webkit-input-placeholder {
-    color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
 }
 
 .search__input:focus {
-    outline: 0;
-    background: transparent;
+	outline: 0;
+	background: transparent;
 }
 
 .select {
-    position: absolute;
-    left: 0;
-    top: 4.5rem;
+	position: absolute;
+	left: 0;
+	top: 4.5rem;
 }
 
 .select-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    padding-left: 4rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	padding-left: 4rem;
 }
 
 .select-rate {
-    padding: 7px 20px;
-    width: 50px;
-    margin: 10px 10px 10px 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border-left: 10px solid #8a7dff;
-    box-shadow: 2px -2px 5px 0 rgba(0, 0, 0, 0.1),
-        -2px -2px 5px 0 rgba(0, 0, 0, 0.1), 2px 2px 5px 0 rgba(0, 0, 0, 0.1),
-        -2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+	padding: 7px 20px;
+	width: 50px;
+	margin: 10px 10px 10px 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border-left: 10px solid #8a7dff;
+	box-shadow: 2px -2px 5px 0 rgba(0, 0, 0, 0.1), -2px -2px 5px 0 rgba(0, 0, 0, 0.1), 2px 2px 5px 0 rgba(0, 0, 0, 0.1),
+		-2px 2px 5px 0 rgba(0, 0, 0, 0.1);
 
-    letter-spacing: 2px;
-    transition: 0.3s all linear;
-    float: left;
-    cursor: pointer;
+	letter-spacing: 2px;
+	transition: 0.3s all linear;
+	float: left;
+	cursor: pointer;
 }
 .select-rate:nth-child(3n + 1) {
-    clear: both;
-    border-color: #8a7dff;
+	clear: both;
+	border-color: #8a7dff;
 }
 
 .select-rate:hover {
-    border-left: 10px solid transparent;
+	border-left: 10px solid transparent;
 }
 .select-rate:hover {
-    border-right: 10px solid #ff0000;
+	border-right: 10px solid #ff0000;
 }
 
 .select-rate-button {
-    font-family: 'Trebuchet MS', 'Lucida Sans';
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(222, 184, 135, 0);
-    color: black;
-    cursor: pointer;
+	font-family: "Trebuchet MS", "Lucida Sans";
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(222, 184, 135, 0);
+	color: black;
+	cursor: pointer;
 }
 
 .detail {
-    background: #ffffff;
+	background: #ffffff;
 
-    position: relative;
-    float: left;
-    top: 50%;
-    margin-top: -0.625em;
-    position: fixed;
-    border-radius: 10px;
-    box-shadow: 2px -2px 5px 0 rgba(0, 0, 0, 0.1),
-        -2px -2px 5px 0 rgba(0, 0, 0, 0.1), 2px 2px 5px 0 rgba(0, 0, 0, 0.1),
-        -2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+	position: relative;
+	float: left;
+	top: 50%;
+	margin-top: -0.625em;
+	position: fixed;
+	border-radius: 10px;
+	box-shadow: 2px -2px 5px 0 rgba(0, 0, 0, 0.1), -2px -2px 5px 0 rgba(0, 0, 0, 0.1), 2px 2px 5px 0 rgba(0, 0, 0, 0.1),
+		-2px 2px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
 .detail-scroll {
-    font-family: 'Trebuchet MS', 'Lucida Sans';
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    width: auto;
-    min-width: 150px;
-    min-height: 20px;
-    padding: 40px;
+	font-family: "Trebuchet MS", "Lucida Sans";
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	width: auto;
+	min-width: 150px;
+	min-height: 20px;
+	padding: 40px;
 }
 
 .styles_scroll-to-top {
-    background-color: white;
-    right: 40px;
-    bottom: 40px;
-    position: fixed;
-    z-index: 2;
-    cursor: pointer;
-    border-radius: 7px;
-    width: 40px;
-    height: 40px;
-    transition: opacity 1s ease-in-out;
-    box-shadow: 0 9px 25px 0 rgb(132 128 177 / 28%);
-    border: none;
-    outline: none;
+	background-color: white;
+	right: 40px;
+	bottom: 40px;
+	position: fixed;
+	z-index: 2;
+	cursor: pointer;
+	border-radius: 7px;
+	width: 40px;
+	height: 40px;
+	transition: opacity 1s ease-in-out;
+	box-shadow: 0 9px 25px 0 rgb(132 128 177 / 28%);
+	border: none;
+	outline: none;
 }
 
 .scroll-path {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
 }
