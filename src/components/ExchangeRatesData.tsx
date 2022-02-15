@@ -9,13 +9,11 @@ type TExchange = { name: string; count: number };
 const ExchangeRatesData: React.FC = () => {
 	const [exchangeRatesData, setExchangeRates] = useState<TExchange[]>([]);
 	const [selectedItem, setSelectedItem] = useState<TExchange>();
-	const [marker, setMarker] = useState(false);
 
 	const loadExchangeRates = () => {
 		Api.get().then((response) => {
 			if (response.quotes) {
 				console.log(Object.entries(response.quotes));
-				setMarker(!!response.quotes);
 
 				setExchangeRates(
 					Object.entries(response.quotes).map((elem) => ({
