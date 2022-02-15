@@ -43,23 +43,22 @@ const ExchangeRatesData: React.FC = () => {
 	};
 
 	return (
-		<div>
-			<header className="app-header">
-				<div className="header">
-					<Link className="logo" to="/">
-						Exchange Rates
-					</Link>
-				</div>
-				<div className="form">
-					<div className="search-form">
-						<input
-							type="text"
-							placeholder="Search here..."
-							className="search__input"
-							onChange={(event) => setValue(event.target.value)}
-							required
-						/>
-					</div>
+		<div className="cover-space">
+			<header className="header">
+				<Link className="logo" to="/">
+					Exchange Rates
+				</Link>
+				<div className="search">
+					<input
+						type="text"
+						placeholder="Search here..."
+						className="search__input"
+						onChange={(event) => setValue(event.target.value)}
+						required
+					/>
+					<button className="search__button" type="submit">
+						<img src="../images/search.svg" />
+					</button>
 				</div>
 			</header>
 			<List filteredRates={filteredRates} clickHandler={clickHandler} />
