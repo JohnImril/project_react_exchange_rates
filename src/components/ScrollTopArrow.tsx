@@ -24,11 +24,7 @@ const ScrollTopArrow = () => {
 	};
 
 	return (
-		<button
-			className="styles_scroll-to-top"
-			onClick={scrollTop}
-			style={{ height: 40, display: showScroll ? "flex" : "none" }}
-		>
+		<button className="arrow" onClick={scrollTop} style={{ height: 40, display: showScroll ? "flex" : "none" }}>
 			<svg className="scroll-path" fill="#6f00ff" viewBox="0 0 256 256">
 				<path
 					d="

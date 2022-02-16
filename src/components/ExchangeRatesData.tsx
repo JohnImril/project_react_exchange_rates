@@ -2,18 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Api } from "./Api";
 import { Detail } from "./Detail";
 import { List } from "./List";
+import { Link } from "react-router-dom";
+
 type TExchange = { name: string; count: number };
 
 const ExchangeRatesData: React.FC = () => {
 	const [exchangeRatesData, setExchangeRates] = useState<TExchange[]>([]);
 	const [selectedItem, setSelectedItem] = useState<TExchange>();
-	const [marker, setMarker] = useState(false);
 
 	const loadExchangeRates = () => {
 		Api.get().then((response) => {
 			if (response.quotes) {
 				console.log(Object.entries(response.quotes));
-				setMarker(!!response.quotes);
 
 				setExchangeRates(
 					Object.entries(response.quotes).map((elem) => ({
@@ -44,8 +44,11 @@ const ExchangeRatesData: React.FC = () => {
 
 	return (
 		<div>
-			<div className="form">
-				<div className="search-form">
+			<header className="header">
+				<Link className="logo" to="/">
+					Exchange Rates
+				</Link>
+				<div className="search">
 					<input
 						type="text"
 						placeholder="Search here..."
@@ -53,8 +56,9 @@ const ExchangeRatesData: React.FC = () => {
 						onChange={(event) => setValue(event.target.value)}
 						required
 					/>
+					<button className="search__button" type="submit"></button>
 				</div>
-			</div>
+			</header>
 			<List filteredRates={filteredRates} clickHandler={clickHandler} />
 			{selectedItem && <Detail name={selectedItem.name} count={selectedItem.count} />}
 		</div>

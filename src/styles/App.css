@@ -86,24 +86,7 @@ video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-	display: block;
-}
-body {
-	line-height: 1;
-	background-color: rgb(255, 255, 255);
-}
+
 ol,
 ul {
 	list-style: none;
@@ -124,12 +107,7 @@ table {
 	border-spacing: 0;
 }
 
-.app {
-	flex-shrink: 0;
-	display: flex;
-}
-
-.app-header {
+.header {
 	font-size: 34px;
 	font-weight: 600;
 	line-height: 50px;
@@ -147,41 +125,49 @@ table {
 	font-family: "Trebuchet MS", "Lucida Sans";
 }
 
-.form {
-	display: flex;
-	align-items: center;
-	background-color: #8a7dff;
-	height: 60px;
-	padding-right: 100px;
-}
-
-.search-form {
-	width: 500px;
-	height: 40px;
-	margin: 150px auto;
-	background: #444;
-	background: rgba(0, 0, 0, 0.2);
-	border-radius: 3px;
-	border: 1px solid #fff;
+.search {
+	box-sizing: border-box;
+	position: relative;
+	width: 300px;
+	margin: 0 auto;
+	height: 42px;
 }
 
 .search__input {
-	width: 370px;
-	padding: 10px 5px;
-	float: left;
-	color: rgb(255, 255, 255);
-	border: 0;
+	box-sizing: border-box;
+	height: 42px;
+	width: 0;
+	padding: 0px 42px 0 15px;
+	border: none;
+	border-bottom: 2px solid transparent;
+	outline: none;
 	background: transparent;
-	border-radius: 3px 0 0 3px;
-}
-
-.search__input::-webkit-input-placeholder {
-	color: rgb(255, 255, 255);
+	transition: 0.4s cubic-bezier(0, 0.8, 0, 1);
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	cursor: pointer;
+	top: 5px;
 }
 
 .search__input:focus {
-	outline: 0;
-	background: transparent;
+	box-sizing: border-box;
+	width: 300px;
+	z-index: 1;
+	border-bottom: 2px solid #f9f0da;
+}
+
+.search__button {
+	border: none;
+	height: 42px;
+	width: 42px;
+	position: absolute;
+	top: 5px;
+	right: 0;
+	background: url("../images/search.svg") no-repeat center center;
+	background-size: content;
+	cursor: pointer;
 }
 
 .select {
@@ -236,10 +222,8 @@ table {
 
 .detail {
 	background: #ffffff;
-
-	position: relative;
-	float: left;
 	top: 50%;
+	left: 50%;
 	margin-top: -0.625em;
 	position: fixed;
 	border-radius: 10px;
@@ -258,7 +242,7 @@ table {
 	padding: 40px;
 }
 
-.styles_scroll-to-top {
+.arrow {
 	background-color: white;
 	right: 40px;
 	bottom: 40px;
