@@ -86,24 +86,7 @@ video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-	display: block;
-}
-body {
-	line-height: 1;
-	background-color: rgb(255, 255, 255);
-}
+
 ol,
 ul {
 	list-style: none;
@@ -154,7 +137,7 @@ table {
 	box-sizing: border-box;
 	height: 42px;
 	width: 0;
-	padding: 0 42px 0 15px;
+	padding: 0px 42px 0 15px;
 	border: none;
 	border-bottom: 2px solid transparent;
 	outline: none;
@@ -164,6 +147,8 @@ table {
 	top: 0;
 	right: 0;
 	z-index: 2;
+	cursor: pointer;
+	top: 5px;
 }
 
 .search__input:focus {
@@ -174,22 +159,15 @@ table {
 }
 
 .search__button {
-	box-sizing: border-box;
-	background: #683b4d;
 	border: none;
 	height: 42px;
 	width: 42px;
 	position: absolute;
-	top: 0;
+	top: 5px;
 	right: 0;
+	background: url("../images/search.svg") no-repeat center center;
+	background-size: content;
 	cursor: pointer;
-}
-
-.search__button:before {
-	content: "\f002";
-	font-family: FontAwesome;
-	font-size: 16px;
-	color: #f9f0da;
 }
 
 .select {
@@ -244,10 +222,8 @@ table {
 
 .detail {
 	background: #ffffff;
-
-	position: relative;
-	float: left;
 	top: 50%;
+	left: 50%;
 	margin-top: -0.625em;
 	position: fixed;
 	border-radius: 10px;

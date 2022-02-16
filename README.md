@@ -3,5 +3,4 @@
 
 Правки:
 
-Названия классов: .search\_\_input, .search-form, .styles_scroll-to-top. Не ясен принцип именования.
-Беспорядочная вёрстка: поле поиска визуально находится в header, а на самом деле в другом элементе; не ясно назначение элементов с классом header, form, select, detail-scroll; список и detail вывалились из body.
+не ясно назначение элементов с классом header, form, select, detail-scroll; список и detail вывалились из body.
