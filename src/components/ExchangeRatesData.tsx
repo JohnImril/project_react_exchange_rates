@@ -56,7 +56,7 @@ const ExchangeRatesData: React.FC = () => {
 						onChange={(event) => setValue(event.target.value)}
 						required
 					/>
-					<button className="search__button" type="submit"></button>
+					<button className="search__button" aria-label="search" role="button" type="submit"></button>
 				</div>
 			</header>
 			<List filteredRates={filteredRates} clickHandler={clickHandler} />
