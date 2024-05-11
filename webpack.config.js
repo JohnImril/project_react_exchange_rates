@@ -3,7 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-	entry: "./src/App.tsx",
+	entry: "./src/index.tsx", // Поменяйте entry point на index.tsx
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "bundle-[hash].js",
@@ -12,7 +12,6 @@ module.exports = {
 		extensions: [".ts", ".tsx", ".js"],
 	},
 	devServer: {
-		//contentBase: path.resolve(__dirname, 'dist'),
 		compress: true,
 		port: 3000,
 	},
