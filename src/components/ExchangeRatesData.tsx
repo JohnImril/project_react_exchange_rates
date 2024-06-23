@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Api } from "./Api";
 import { Detail } from "./Detail";
 import { List } from "./List";
@@ -8,38 +8,38 @@ type TExchange = { name: string; count: number };
 
 const ExchangeRatesData: React.FC = () => {
 	const [exchangeRatesData, setExchangeRates] = useState<TExchange[]>([]);
-	const [selectedItem, setSelectedItem] = useState<TExchange>();
+	const [selectedItem, setSelectedItem] = useState<TExchange | null>(null);
+	const [value, setValue] = useState("");
 
-	const loadExchangeRates = () => {
-		Api.get().then((response) => {
+	const loadExchangeRates = async () => {
+		try {
+			const response = await Api.get();
 			if (response.quotes) {
-				console.log(Object.entries(response.quotes));
-
-				setExchangeRates(
-					Object.entries(response.quotes).map((elem) => ({
-						name: elem[0].slice(3),
-						count: elem[1],
-					}))
-				);
+				const rates = Object.entries(response.quotes).map(([key, count]) => ({
+					name: key.slice(3),
+					count,
+				}));
+				setExchangeRates(rates);
 			}
-		});
+		} catch (error) {
+			console.error("Failed to fetch exchange rates:", error);
+		}
 	};
+
 	useEffect(() => {
 		loadExchangeRates();
 	}, []);
 
-	const [value, setValue] = useState("");
-
-	const filteredRates = React.useMemo(
+	const filteredRates = useMemo(
 		() =>
 			value
-				? exchangeRatesData.filter((quotes) => quotes.name.toLowerCase().includes(value.toLowerCase()))
+				? exchangeRatesData.filter((quote) => quote.name.toLowerCase().includes(value.toLowerCase()))
 				: exchangeRatesData,
 		[exchangeRatesData, value]
 	);
 
-	const clickHandler = ({ name, count }: TExchange) => {
-		setSelectedItem({ name, count });
+	const clickHandler = (exchange: TExchange) => {
+		setSelectedItem(exchange);
 	};
 
 	return (

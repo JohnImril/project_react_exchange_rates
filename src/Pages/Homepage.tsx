@@ -1,7 +1,7 @@
-import React from "react";
-import "../styles/App.css";
 import ExchangeRatesData from "../components/ExchangeRatesData";
 import ScrollTopArrow from "../components/ScrollTopArrow";
+
+import "../styles/App.css";
 
 const Homepage = () => {
 	return (
@@ -12,4 +12,4 @@ const Homepage = () => {
 	);
 };
 
-export { Homepage };
+export default Homepage;

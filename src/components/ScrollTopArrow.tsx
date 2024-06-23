@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../styles/App.css";
 
-const ScrollTopArrow = () => {
+const ScrollTopArrow: React.FC = () => {
 	const [showScroll, setShowScroll] = useState(false);
+
+	const checkScrollTop = useCallback(() => {
+		if (window.pageYOffset > 400) {
+			setShowScroll(true);
+		} else {
+			setShowScroll(false);
+		}
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener("scroll", checkScrollTop);
-		return function cleanup() {
+		return () => {
 			window.removeEventListener("scroll", checkScrollTop);
 		};
-	});
-
-	const checkScrollTop = () => {
-		if (!showScroll && window.pageYOffset > 400) {
-			setShowScroll(true);
-		} else if (showScroll && window.pageYOffset <= 400) {
-			setShowScroll(false);
-		}
-	};
+	}, [checkScrollTop]);
 
 	const scrollTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });

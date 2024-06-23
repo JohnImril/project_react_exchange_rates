@@ -1,11 +1,10 @@
 type TExchange = { name: string; count: number };
 
-export const Detail = (props: TExchange) => {
+export const Detail: React.FC<TExchange> = ({ name, count }) => {
 	return (
 		<div className="detail">
 			<div className="detail-scroll">
-				1$=
-				{props.count} {props.name}
+				1$={count} {name}
 			</div>
 		</div>
 	);
